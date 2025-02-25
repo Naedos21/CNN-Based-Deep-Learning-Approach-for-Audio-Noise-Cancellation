@@ -16,3 +16,12 @@ import audioread
 from scipy.io.wavfile import write
 from scipy.signal import butter,filtfilt
 
+def cancel(pathn,paths): 
+   
+    noi = AudioSegment.from_file(pathn, format="wav")
+    
+    sig=AudioSegment.from_file(paths, format="wav")
+   
+
+    AudioSegment.converter = which("ffmpeg")
+    
